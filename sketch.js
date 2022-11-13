@@ -80,30 +80,35 @@ function setup() {
   star7.scale=0.2
   star7.velocityY+=0.8;
 
-  balloon=createSprite(360,520,60,60)
-  balloon.addImage(bal)
-  balloon.scale=0.5
+	balloon= createImg(bal)
+	balloon.position(360,520)
+	balloon.size(60,60)
+	balloon.mouseClicked(Blower)
+  
+	balloon1= createImg(bal1)
+	balloon1.position(260,520)
+	balloon1.size(60,60)
+	balloon1.mouseClicked(Blower1)
+	
+	balloon2= createImg(bal2)
+	balloon2.position(160,520)
+	balloon2.size(60,60)
+	balloon2.mouseClicked(Blower2)
+	
+	balloon3= createImg(bal3)
+	balloon3.position(60,520)
+	balloon3.size(60,60)
+	balloon3.mouseClicked(Blower3)
+	
+	balloon4= createImg(bal4)
+	balloon4.position(60,320)
+	balloon4.size(60,60)
+	balloon4.mouseClicked(Blower4)
 
-  balloon1=createSprite(260,520,60,60)
-  balloon1.addImage(bal1)
-  balloon1.scale=0.5
-
-  balloon2=createSprite(160,520,60,60)
-  balloon2.addImage(bal2)
-  balloon2.scale=0.5
-
-  balloon3=createSprite(60,520,60,60)
-  balloon3.addImage(bal3)
-  balloon3.scale=0.5
-
-  balloon4=createSprite(60,320,60,60)
-  balloon4.addImage(bal4)
-  balloon4.scale=0.5
-
-  balloon5=createSprite(60,120,60,60)
-  balloon5.addImage(bal4)
-  balloon5.scale=0.5
-
+	balloon5= createImg(bal5)
+	balloon5.position(60,120)
+	balloon5.size(60,60)
+	balloon5.mouseClicked(Blower5)
   
 
   
@@ -114,10 +119,6 @@ function draw()
 {
   background(bg);
   Engine.update(engine);
-  drawSprites()
-  if(mousePressedOver(balloon)){
-    Blower()
-  }
   
 
 
@@ -128,3 +129,25 @@ function Blower(){
   Matter.Body.applyForce(balloon,{x:0,y:0},{x:0,y:-0.03})
   air.play()
 }
+function Blower1(){
+  Matter.Body.applyForce(balloon1,{x:0,y:0},{x:0,y:-0.03})
+  air.play()
+}
+function Blower2(){
+  Matter.Body.applyForce(balloon2,{x:0,y:0},{x:0,y:-0.03})
+  air.play()
+}
+function Blower3(){
+  Matter.Body.applyForce(balloon3,{x:0,y:0},{x:0,y:-0.03})
+  air.play()
+}
+function Blower4(){
+  Matter.Body.applyForce(balloon4,{x:0,y:0},{x:-0.03,y:0})
+  air.play()
+}
+function Blower5(){
+  Matter.Body.applyForce(balloon5,{x:0,y:0},{x:-0.03,y:0})
+  air.play()
+}
+
+
